@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
@@ -19,7 +20,7 @@ public class ReaderConverter extends DtoConverterHelper{
                 from.getEmail(),
                 from.getGender(),
                 from.getDateOfBirth(),
-                getFavoriteBookList(new ArrayList<>(from.getFavoriteBooks())),
+                getFavoriteBookList(new ArrayList<>(Objects.requireNonNull(from.getFavoriteBooks()))),
                 new ArrayList<>()
 
         );
