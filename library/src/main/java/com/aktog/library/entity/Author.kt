@@ -1,6 +1,7 @@
 package com.aktog.library.entity
 
-import org.hibernate.annotations.Cascade
+import org.hibernate.Hibernate
+
 import org.hibernate.annotations.GenericGenerator
 import java.time.LocalDate
 import javax.persistence.*
@@ -13,6 +14,7 @@ data class Author @JvmOverloads constructor(
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String? = "",
     val name: String,
+    val email: String,
     val dateOfBirth: LocalDate,
     val gender: Gender,
 
@@ -20,7 +22,20 @@ data class Author @JvmOverloads constructor(
     val books: List<Book>? = ArrayList(),
 
     ) {
-    enum class Gender {
-        MALE, FEMALE, UNKNOWN
+
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
+        other as Author
+
+        return id != null && id == other.id
+    }
+
+    override fun hashCode(): Int = javaClass.hashCode()
+
+    @Override
+    override fun toString(): String {
+        return this::class.simpleName + "(id = $id )"
     }
 }

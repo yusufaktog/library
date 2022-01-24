@@ -1,2 +1,5 @@
-package com.aktog.library.entity;public enum Gender {
+package com.aktog.library.entity;
+
+public enum Gender {
+    MALE, FEMALE, UNKNOWN
 }

@@ -1,16 +1,16 @@
 package com.aktog.library.entity;
 
 public enum Genre {
-    Fiction,
-    Mystery,
-    Thriller,
-    Horror,
-    Historical,
-    Romance,
-    Western,
-    Sci_Fi,
-    Fantasy,
-    Dystopian,
+    DYSTOPIAN,
+    FANTASY,
+    FICTION,
+    HISTORICAL,
+    HORROR,
+    MYSTERY,
+    ROMANCE,
+    SCI_FI,
+    THRILLER,
+    WESTERN,
 
 }
 

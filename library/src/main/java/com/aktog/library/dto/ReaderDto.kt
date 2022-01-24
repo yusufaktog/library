@@ -1,19 +1,20 @@
 package com.aktog.library.dto
 
-import com.aktog.library.dto.summarizeddto.SummarizedBookDto
+
 import com.aktog.library.entity.Author
+import com.aktog.library.entity.Gender
 import com.fasterxml.jackson.annotation.JsonInclude
 import java.time.LocalDate
 
-data class ReaderDto(
+data class ReaderDto @JvmOverloads constructor(
     val id: String? = "",
     val name: String,
     val email: String,
-    val gender: Author.Gender,
+    val gender: Gender,
     val dateOfBirth: LocalDate,
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
-    val favoriteBooks: List<SummarizedBookDto>? = ArrayList(),
+    val favoriteBooks: List<BookDto>? = ArrayList(),
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     val friends: List<ReaderDto>? = ArrayList()

@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
-public class ReaderConverter extends DtoConverterHelper{
+public class ReaderDtoConverter extends DtoConverterHelper {
     public ReaderDto convert(Reader from) {
         return new ReaderDto(
                 from.getId(),
@@ -20,11 +20,15 @@ public class ReaderConverter extends DtoConverterHelper{
                 from.getEmail(),
                 from.getGender(),
                 from.getDateOfBirth(),
-                getFavoriteBookList(new ArrayList<>(Objects.requireNonNull(from.getFavoriteBooks()))),
-                new ArrayList<>()
+                getBookDtoList(new ArrayList<>(Objects.requireNonNull(from.getFavoriteBooks()))),
+                getFriendDtoList(new ArrayList<>(Objects.requireNonNull(from.getFriends())))
 
         );
 
+    }
+
+    public List<ReaderDto> convert(List<Reader> from) {
+        return from.stream().map(this::convert).collect(Collectors.toList());
     }
 
 
