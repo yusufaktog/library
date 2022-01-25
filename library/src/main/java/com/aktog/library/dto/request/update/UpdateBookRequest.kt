@@ -9,7 +9,6 @@ data class UpdateBookRequest(
     @field:NotBlank
     val title: String,
 
-    @field:NotBlank
     @field:Min(value = 0)
     val bookmark: Int,
 

@@ -2,13 +2,8 @@ package com.aktog.library.dto.request.create
 
 import com.aktog.library.entity.Author
 import com.aktog.library.entity.Genre
-import org.springframework.beans.factory.annotation.Value
 import java.time.LocalDate
-import javax.persistence.FetchType
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
 import javax.validation.constraints.*
-import kotlin.math.max
 
 data class CreateBookRequest(
 

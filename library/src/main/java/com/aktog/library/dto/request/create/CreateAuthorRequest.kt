@@ -1,6 +1,5 @@
 package com.aktog.library.dto.request.create
 
-import com.aktog.library.entity.Author
 import com.aktog.library.entity.Book
 import com.aktog.library.entity.Gender
 import java.time.LocalDate

@@ -18,6 +18,7 @@ data class Book @JvmOverloads constructor(
     val bookmark: Int? = 1,
     val releaseDate: LocalDate,
     val language: String,
+    @field:ElementCollection
     val genres: List<Genre>,
     val imageUrl: String,
     val rate: Double,

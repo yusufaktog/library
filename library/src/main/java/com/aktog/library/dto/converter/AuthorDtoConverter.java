@@ -18,7 +18,7 @@ public class AuthorDtoConverter extends DtoConverterHelper {
                 from.getEmail(),
                 from.getDateOfBirth(),
                 from.getGender(),
-                getBookDtoList(new ArrayList<>(Objects.requireNonNull(from.getBooks())))
+                getBookDtoList(new ArrayList<>((from.getBooks())))
         );
     }
     public List<AuthorDto> convert(List<Author> from){

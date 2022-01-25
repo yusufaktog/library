@@ -3,10 +3,7 @@ package com.aktog.library.entity
 import org.hibernate.Hibernate
 import org.hibernate.annotations.GenericGenerator
 import java.time.LocalDate
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
 data class Reader @JvmOverloads constructor(
@@ -20,7 +17,11 @@ data class Reader @JvmOverloads constructor(
     val email: String,
     val gender: Gender,
     val dateOfBirth: LocalDate,
+
+    @ElementCollection
     val favoriteBooks: List<Book>? = ArrayList(),
+
+    @ElementCollection
     val friends: List<Reader>? = ArrayList()
 
 

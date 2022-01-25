@@ -1,7 +1,6 @@
 package com.aktog.library.dto
 
 
-import com.aktog.library.entity.Author
 import com.aktog.library.entity.Gender
 import com.fasterxml.jackson.annotation.JsonInclude
 import java.time.LocalDate

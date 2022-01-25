@@ -33,7 +33,7 @@ public class ReaderService {
 
     }
 
-    public String deleteReaderByID(String id) {
+    public String deleteReaderById(String id) {
         return "Reader id: " + id + " deleted";
     }
 
@@ -47,11 +47,11 @@ public class ReaderService {
         return readerDtoConverter.convert(readerRepository.save(reader));
     }
 
-    public List<ReaderDto> getAllBookDtoList() {
-        return readerDtoConverter.convert(getAllBookList());
+    public List<ReaderDto> getAllReaderDtoList() {
+        return readerDtoConverter.convert(getAllReaderList());
     }
 
-    public List<Reader> getAllBookList() {
+    public List<Reader> getAllReaderList() {
         return readerRepository.findAll();
     }
 
