@@ -6,6 +6,7 @@ import com.aktog.library.entity.Book;
 import com.aktog.library.entity.Reader;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class DtoConverterHelper {
@@ -13,16 +14,17 @@ public class DtoConverterHelper {
     protected List<BookDto> getBookDtoList(List<Book> favoriteBooks) {
 
         return favoriteBooks.stream().map(
-                f -> new BookDto(
-                        f.getId(),
-                        f.getBookmark(),
-                        f.getContent(),
-                        f.getTitle(),
-                        f.getReleaseDate(),
-                        f.getGenres(),
-                        f.getImageUrl(),
-                        f.getLanguage(),
-                        f.getRate()
+                book -> new BookDto(
+                        book.getId(),
+                        book.getBookmark(),
+                        book.getContent(),
+                        book.getTitle(),
+                        book.getReleaseDate(),
+                        book.getGenres(),
+                        book.getImageUrl(),
+                        book.getLanguage(),
+                        book.getRate(),
+                        Objects.requireNonNull(book.getAuthor().getId())
                 )
         ).collect(Collectors.toList());
     }

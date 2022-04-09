@@ -15,8 +15,6 @@ data class BookDto @JvmOverloads constructor(
     val imageUrl: String?,
     val rate: Double,
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    val author: AuthorDto? = null
-
+    val authorId: String
 )
 

@@ -19,5 +19,5 @@ data class UpdateAuthorRequest (
 
     val gender: Gender,
 
-    val books: List<Book>?
+    val books: List<Book>? = ArrayList()
 )

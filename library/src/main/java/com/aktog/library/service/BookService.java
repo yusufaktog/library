@@ -24,7 +24,6 @@ public class BookService {
     public BookService(BookRepository bookRepository, BookDtoConverter bookDtoConverter, AuthorService authorService) {
         this.bookDtoConverter = bookDtoConverter;
         this.bookRepository = bookRepository;
-
         this.authorService = authorService;
     }
 
@@ -34,7 +33,6 @@ public class BookService {
 
     public Book findByBookId(String id) {
         return bookRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Book id: " + id + "not found"));
-
     }
 
     public String deleteBookById(String id) {

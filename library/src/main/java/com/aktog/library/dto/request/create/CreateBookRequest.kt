@@ -31,7 +31,7 @@ data class CreateBookRequest(
     val rate: Double,
 
     @field:NotNull
-    val author: Author,
+    val authorId: String,
 
     @field:NotBlank
     val content: String

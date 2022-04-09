@@ -11,6 +11,7 @@ data class AuthorDto @JvmOverloads constructor(
     val email: String,
     val dateOfBirth: LocalDate,
     val gender: Gender,
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     val books: List<BookDto>? = ArrayList()
 )
