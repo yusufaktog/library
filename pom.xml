@@ -16,6 +16,8 @@
     <properties>
         <java.version>11</java.version>
         <kotlin.version>1.5.31</kotlin.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <flyway-maven-plugin.version>8.0.0</flyway-maven-plugin.version>
     </properties>
     <dependencies>
