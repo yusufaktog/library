@@ -6,11 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="virtual_library" />
         <module name="library" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="library" target="1.5" />
+      <module name="library" target="11" />
+      <module name="virtual_library" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="library" options="-parameters" />
+      <module name="virtual_library" options="-parameters" />
+    </option>
   </component>
 </project>
